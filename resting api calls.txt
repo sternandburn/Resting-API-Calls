@@ -1,0 +1,269 @@
+const express = require('express');
+const app = express();
+
+app.get('/', function(request,response) {
+response.writeHead(200);
+response.write('<html><body><p>Please specify a mission, rock, food, player, item, enemy, NPC, tree, or texture in the URL path.</p></body></html>')
+});
+//get missions
+app.get('/missions', function(request, response) {
+response.json({mission1: 'no russian', mission2: 'vorkuta'});
+response.end();
+});
+//get mission
+app.get('/missions/:mission', function(request, response) {
+const mission = request.params.mission;
+response.json("You have received the " + mission);
+response.end();
+});
+//delete mission
+app.delete('/missions/:mission', function(request, response){
+const mission = request.params.mission;
+response.json("You have terminated the " + mission);
+response.end();
+});
+//create mission
+app.post('/missions/:mission', function(request, response) {
+const mission = request.params.mission;
+response.json("You have created the " + mission);
+response.end();
+});
+//replace mission
+app.put('/missions/:mission', function(request, response) {
+const mission = request.params.mission;
+response.json("You have replaced the " + mission);
+response.end();
+});
+//get rocks
+app.get('/rocks', function(request, response) {
+response.json({mission1: 'granite', mission2: 'diorite'});
+response.end();
+});
+//get rock
+app.get('/rocks/:rock', function(request, response) {
+const rock = request.params.rock;
+response.json("You have received the " +rock);
+response.end();
+});
+//delete rock
+app.delete('/rocks/:rock', function(request, response){
+const rock = request.params.rock;
+response.json("You have terminated the " +rock);
+response.end();
+});
+//create rock
+app.post('/missions/:rock', function(request, response) {
+const rock = request.params.rock;
+response.json("You have created the " + rock);
+response.end();
+});
+//replace rock
+app.put('/rocks/:rock', function(request, response) {
+const rock = request.params.rock;
+response.json("You have replaced the " + rock);
+response.end();
+});
+//get players
+app.get('/players', function(request, response) {
+response.json({player1: 'Noah', player2: 'Bobby'});
+response.end();
+});
+//get player
+app.get('/players/:player', function(request, response) {
+const player = request.params.player;
+response.json("You have received the " + player);
+response.end();
+});
+//delete player
+app.delete('/players/:player', function(request, response){
+const player = request.params.player;
+response.json("You have terminated the " + player);
+response.end();
+});
+//create player
+app.post('/players/:player', function(request, response) {
+const player = request.params.player;
+response.json("You have created the " + player);
+response.end();
+});
+//replace player
+app.put('/players/:player', function(request, response) {
+const player = request.params.player;
+response.json("You have replaced the " + player);
+response.end();
+});
+
+//get items
+app.get('/items', function(request, response) {
+response.json({item1: 'spear', item2: 'bow'});
+response.end();
+});
+
+//get item
+app.get('/items/:item', function(request, response) {
+const item = request.params.item;
+response.json("You have recieved the " + item);
+response.end();
+});
+
+//delete item
+app.delete('/items/:item', function(request, response) {
+const item = request.params.item;
+response.json("You have terminated the " +i tem);
+response.end();
+});
+
+//create item
+app.post('/items/:item', function(request, response) {
+const item = request.params.item;
+response.json("You have created the " + item);
+response.end();
+});
+
+//replace item
+app.put('/items/:item', function(request, response) {
+const item = request.params.item;
+response.json("You have replaced the " + item);
+response.end();
+});
+
+//get enemies
+app.get('/enemies', function(request, response) {
+response.json({enemy1: 'Malagor', enemy2: 'Babboo'});
+response.end();
+});
+
+//get enemy
+app.get('/enemies/:enemy', function(request, response) {
+const enemy = request.params.enemy;
+response.json("You have recieved the " + enemy);
+response.end();
+});
+
+//delete enemy
+app.delete('/enemies/:enemy', function(request, response) {
+const enemy = request.params.enemy;
+response.json("You have terminated the " + enemy);
+response.end();
+});
+
+//create enemy
+app.post('/enemies/:enemy', function(request, response) {
+const enemy = request.params.enemy;
+response.json("You have created the " + enemy);
+response.end();
+});
+
+//replace enemy
+app.put('/enemies/:enemy', function(request, response) {
+const enemy = request.params.enemy;
+response.json("You have replaced the " + enemy);
+response.end();
+});
+
+
+//get Non Playable Characters
+app.get('/NPCs', function(request, response) {
+response.json({NPC1: 'Link', NPC2: 'Zelda'});
+response.end();
+});
+
+//get NPC
+app.get('/NPCs/:NPC', function(request, response) {
+const NPC = request.params.NPC;
+response.json("You have recieved the " + NPC);
+response.end();
+});
+
+//delete NPC
+app.delete('/NPCs/:NPC', function(request, response) {
+const NPC = request.params.NPC;
+response.json("You have terminated the " + NPC);
+response.end();
+});
+
+//create NPC
+app.post('/NPCs/:NPC', function(request, response) {
+const NPC = request.params.NPC;
+response.json("You have created the " + NPC);
+response.end();
+});
+
+//replace NPC
+app.put('/NPCs/:NPC', function(request, response) {
+const NPC = request.params.NPC;
+response.json("You have replaced the " + NPC);
+response.end();
+});
+
+//get trees
+app.get('/trees', function(request, response) {
+response.json({tree1: 'birch', item2: 'oak'});
+response.end();
+});
+
+//get tree
+app.get('/trees/:tree', function(request, response) {
+const tree = request.params.tree;
+response.json("You have recieved the " + tree);
+response.end();
+});
+
+//delete tree
+app.delete('/trees/:tree', function(request, response) {
+const tree = request.params.tree;
+response.json("You have terminated the " + tree);
+response.end();
+});
+
+//create tree
+app.post('/trees/:tree', function(request, response) {
+const tree = request.params.tree;
+response.json("You have created the " + tree);
+response.end();
+});
+
+//replace tree
+app.put('/trees/:tree', function(request, response) {
+const tree = request.params.tree;
+response.json("You have replaced the " + tree);
+response.end();
+});
+
+//get textures
+app.get('/textures', function(request, response) {
+response.json({item1: 'grass', item2: 'water'});
+response.end();
+});
+
+//get texture
+app.get('/textures/:texture', function(request, response) {
+const texture = request.params.texture;
+response.json("You have recieved the " + texture);
+response.end();
+});
+
+//delete texture
+app.delete('/textures/:texture', function(request, response) {
+const texture = request.params.texture;
+response.json("You have terminated the " + texture);
+response.end();
+});
+
+//create texture
+app.post('/textures/:texture', function(request, response) {
+const texture = request.params.texture;
+response.json("You have created the " + texture);
+response.end();
+});
+
+//replace texture
+app.put('/textures/:texture', function(request, response) {
+const texture = request.params.texture;
+response.json("You have replaced the " + texture);
+response.end();
+});
+
+app.listen(8080, function() {
+console.log('express is now running on port 8080...');
+});
